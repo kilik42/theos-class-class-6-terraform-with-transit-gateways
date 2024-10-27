@@ -1,0 +1,163 @@
+    1  gcloud init
+    2  gcloud init
+    3  gcloud init
+    4  gcloud init
+    5  gcloud init
+    6  gcloud cheat-sheet
+    7  gcloud init
+    8  gcloud computer instances create vm01
+    9  gcloud compute instances create vm01
+   10  gcloud compute instances create vm02
+   11  gcloud compute instances create vm01
+   12  gcloud compute instances create vm01 --zone us-central1-a
+   13  gcloud compute zones list
+   14  gcloud init
+   15  gcloud compute instances create vm01 --zone us-central1-a
+   16  gcloud init
+   17  gcloud compute instances create vm01 --zone us-central1-a
+   18  gcloud init
+   19  gcloud compute instances create vm3
+   20  gcloud compute instances create vm05 --zone us-central1-a
+   21  choco install opentofu
+   22  choco install opentofu
+   23  choco install -y opentofu
+   24  cd desktop
+   25  mkdir kubernetes
+   26  cd kubernetes
+   27  gcloud container clusters get-credentials autopilot-cluster-1 --region us-central1 --project terraf-392514
+   28  gcloud components install kubectl
+   29  gcloud components install kubectl~
+   30  gcloud components install kubectl
+   31  choco install kubernetes-cli
+   32  choco install kubernetes-cli
+   33  gcloud init
+   34  kubectl version
+   35  cd desktop
+   36  cd kubernetes
+   37  brew list
+   38  ls
+   39  clear
+   40  brew list
+   41  gcloud init
+   42  gcloud auth list
+   43  gcloud info
+   44  gcloud container clusters get-credentials gke-2 --region us-central1 --project terraf-392514
+   45    gcloud components install gke-gcloud-auth-plugin
+   46  gcloud container clusters get-credentials gke-2 --region us-central1 --project terraf-392514
+   47  gke-gcloud-auth-plugin --version
+   48  kubectl get namespaces
+   49  kubectl config current-context
+   50  kubectl config view
+   51  kubectl config get-contexts 
+   52  kubectl config current-context  
+   53  kubectl explain pods 
+   54  kubectl config current-context 
+   55  kubectl explain pods 
+   56  kubectl get services
+   57  kubectl get pods --all-namespaces 
+   58  kubectl get pods 
+   59  git add *.tf
+   60  git add *.pdf
+   61  git add *.jpg
+   62  git commit -m "working on routes"
+   63  git push origin
+   64  git add *.tf
+   65  git commit -m "working on routes"
+   66  git push origin
+   67  git checkout -b "new_branch"
+   68  git add *.tf
+   69  git commit -m "releasing to new branch"
+   70  git push new_branch
+   71  git push origin new_branch
+   72  terraform init
+   73  git init
+   74  terraform init
+   75  terraform validate
+   76  terraform validate
+   77  terraform validate
+   78  terraform validate
+   79  terraform validate
+   80  clear
+   81  clear
+   82  terraform validate
+   83  terraform validate
+   84  git add *.tf
+   85  git commit -m "added .ignore file"
+   86  git push origin
+   87  git checkout -b main
+   88  git branch main
+   89  git branch -main
+   90  git switch main
+   91  git add *.tf
+   92  git commit -m "added .ignore file"
+   93  git push origin
+   94  git rm --cached .terraform/providers/registry.terraform.io/hashicorp/aws/3.76.1/windows_amd64/terraform-provider-aws_v3.76.1_x5.exe
+   95  git commit -m "Remove large Terraform provider file from history"
+   96  git add *.tf
+   97  git commit -m "Remove large Terraform provider file from history"
+   98  git push origin main --force
+   99  git rm --cached .terraform/providers/registry.terraform.io/hashicorp/aws/3.76.1/windows_amd64/terraform-provider-aws_v3.76.1_x5.exe
+  100  git commit -m "Remove large Terraform provider file from history"
+  101  git commit -m "Remove large Terraform provider file from history"
+  102  git filter-branch --force --index-filter   "git rm --cached --ignore-unmatch .terraform/providers/registry.terraform.io/hashicorp/aws/3.76.1/windows_amd64/terraform-provider-aws_v3.76.1_x5.exe"   --prune-empty --tag-name-filter cat -- --all
+  103  git rm --cached terraform.lock.hcl
+  104  git add *.tf
+  105  git commit -m "hope this works"
+  106  git push origin
+  107  git remote add origin https://github.com/kilik42/theos-work-class-6-first-terraform.git
+  108  git remote remove origin
+  109  git remote add origin https://github.com/kilik42/theos-work-class-6-first-terraform.git
+  110  git init
+  111  git add *.tf
+  112  git commit -m "first commit"
+  113  git branch -M main
+  114  git remote add origin https://github.com/kilik42/theos-work-class-6-first-terraform.git
+  115  git push -u origin main
+  116  git remote remove origin
+  117  git remote add origin
+  118  git remote add origin https://github.com/kilik42/theos-class-class-6-terraform-with-transit-gateways.git
+  119  git add *.tf
+  120  git commit -m "working on updating"
+  121  git commit -m "first commit"
+  122  git branch -M main
+  123  git remote add origin https://github.com/kilik42/theos-class-class-6-terraform-with-transit-gateways.git
+  124  git push -u origin main
+  125  git rm --cached terraform.lock.hcl
+  126  git ls-files | grep "terraform.lock.hcl"
+  127  git add .
+  128  git rm --cached terraform.lock.hcl
+  129  git rm --cached C:\Users\marvi\Desktop\terraformtest\aws_terraform\homework10_27_24\.terraform.lock.hcl
+  130  git ls-files | grep "terraform.lock.hcl"
+  131  git rm --cached .terraform.lock.hcl
+  132  git ls-files | grep "terraform.lock.hcl"
+  133  git init
+  134  git add *.tf
+  135  git add *.tf
+  136  git commit -m "first commit"
+  137  git branch -M main
+  138  git remote add origin https://github.com/kilik42/theos-class-class-6-terraform-with-transit-gateways.git
+  139  git push -u origin main
+  140  history > command_history.txt
+Here’s how to fix it:
+
+Navigate to the Repository Root: Ensure you are in the root of your repository (in this case, it seems to be C:/Users/marvi/Desktop/terraformtest/aws_terraform/homework10_27_24).
+
+Run the git rm --cached Command with a Relative Path: Use the relative path from the root of your repository, rather than the full absolute path. In this case, try:
+
+bash
+Copy code
+git rm --cached .terraform.lock.hcl
+If the lock file is in a different subdirectory, navigate to that subdirectory or use the appropriate relative path.
+
+Verify the File’s Presence: Before running git rm --cached, you can verify that Git recognizes the file by using:
+
+bash
+Copy code
+git ls-files | grep ".terraform.lock.hcl"
+Commit and Push Changes: After successfully removing it, commit and push the changes:
+
+bash
+Copy code
+git commit -m "Remove .terraform.lock.hcl from tracking"
+git push origin <branch-name>
+This should prevent .terraform.lock.hcl from being tracked in your repository.
