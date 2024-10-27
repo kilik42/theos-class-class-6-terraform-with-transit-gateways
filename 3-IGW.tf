@@ -5,8 +5,8 @@ resource "aws_internet_gateway" "igw_for_app01" {
   tags = {
     Name    = "app01_IG"
     Service = "application01"
-    Owner   = "mark"
-    Planet  = "Musafar"
+    Owner   = "marvin"
+    Planet  = "Area100-feedin"
   }
 }
 
