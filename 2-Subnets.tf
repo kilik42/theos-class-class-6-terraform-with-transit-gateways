@@ -40,7 +40,7 @@ resource "aws_subnet" "private-sa-east-1a" {
 # need one private subnet for this vpc
 resource "aws_subnet" "private-sa-east-1b" {
   vpc_id            = aws_vpc.app02.id
-  cidr_block        = "10.101.11.0/24"
+  cidr_block        = "10.101.12.0/24"
   availability_zone = "sa-east-1b"
 
   tags = {
@@ -56,7 +56,7 @@ resource "aws_subnet" "private-sa-east-1b" {
 # need one private subnet for this vpc
 resource "aws_subnet" "private-sa-east-1c" {
   vpc_id            = aws_vpc.app03.id
-  cidr_block        = "10.102.11.0/24"
+  cidr_block        = "10.102.13.0/24"
   availability_zone = "sa-east-1c"
 
   tags = {
@@ -68,3 +68,4 @@ resource "aws_subnet" "private-sa-east-1c" {
 }
 
 
+################## Summary ##################
