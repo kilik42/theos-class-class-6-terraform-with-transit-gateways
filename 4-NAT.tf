@@ -7,7 +7,7 @@ resource "aws_eip" "nat" {
 
 resource "aws_nat_gateway" "nat" {
   allocation_id = aws_eip.nat.id
-  subnet_id     = aws_subnet.__________________________________ # for app01 --- do I need one for app02 and app03?
+  subnet_id     = aws_subnet.aws_vpc.app01.id # for app01 --- do I need one for app02 and app03?
 
   tags = {
     Name = "nat"
