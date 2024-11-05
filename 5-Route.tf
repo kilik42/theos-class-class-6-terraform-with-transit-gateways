@@ -135,3 +135,33 @@ resource "aws_route_table_association" "public-sa-east-1a" {
 #   subnet_id      = aws_subnet.public-ap-northeast-1c.id
 #   route_table_id = aws_route_table.public.id
 # }
+
+
+####### Summary of changes needed:
+# 1. Create a new internet gateway for app02 and app03 if they need public access.
+
+
+
+# 2. Create a NAT gateway for app02 and app03 if they need to access the internet.
+
+
+# 3. Create route tables for app02 and app03, and associate them with the respective subnets.
+
+
+# 4. Ensure that the route tables for app02 and app03 have the correct routes for internet access (using the NAT gateway for private subnets and the internet gateway for public subnets).
+
+
+# 5. Ensure that the route table associations are correctly set up for the subnets in app02 and app03.
+
+
+# 6. Ensure that the tags for all resources are consistent and meaningful.
+
+# 7. Review the CIDR blocks to ensure they do not overlap and are correctly assigned.
+
+# 8. Ensure that the resources are created in the correct order using the `depends_on` attribute where necessary.
+
+
+
+# 9. Validate the configuration using `terraform validate` and `terraform plan` to ensure there are no errors before applying the changes.
+
+
