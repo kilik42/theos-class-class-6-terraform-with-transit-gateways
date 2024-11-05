@@ -1,4 +1,4 @@
-resource "aws_route_table" "private" {
+resource "aws_route_table" "private_app02" {
   vpc_id = aws_vpc.app02.id
 
   route = [
@@ -25,7 +25,7 @@ resource "aws_route_table" "private" {
 }
 
 
-resource "aws_route_table" "private" {
+resource "aws_route_table" "private_app03" {
   vpc_id = aws_vpc.app03.id
 
   route = [
@@ -63,7 +63,7 @@ resource "aws_route_table" "public" {
   route = [
     {
       cidr_block                 = "0.0.0.0/0"
-      gateway_id                 = aws_internet_gateway.igw.id
+      gateway_id                 = aws_internet_gateway.igw_for_app01.id
       nat_gateway_id             = ""
       carrier_gateway_id         = ""
       destination_prefix_list_id = ""
@@ -89,11 +89,16 @@ resource "aws_route_table" "public" {
 #   subnet_id      = aws_subnet.private-ap-northeast-1a.id
 #   route_table_id = aws_route_table.private.id
 # }
-resource "aws_route_table_association" "private-sa-east-1a" {
-  subnet_id      = aws_subnet.private-sa-east-1a.id
-  route_table_id = aws_route_table.private.id
+
+resource "aws_route_table_association" "public-sa-east-1a" {
+  subnet_id      = aws_subnet.public-sa-east-1a.id
+  route_table_id = aws_route_table.public.id
 }
 
+# resource "aws_route_table_association" "public-sa-east-1a" {
+#   subnet_id      = aws_subnet.public-sa-east-1a.id
+#   route_table_id = aws_route_table.public.id
+# }
 # resource "aws_route_table_association" "private-ap-northeast-1d" {
 #   subnet_id      = aws_subnet.private-ap-northeast-1d.id
 #   route_table_id = aws_route_table.private.id
@@ -101,7 +106,7 @@ resource "aws_route_table_association" "private-sa-east-1a" {
 
 resource "aws_route_table_association" "private-sa-east-1b" {
   subnet_id      = aws_subnet.private-sa-east-1b.id
-  route_table_id = aws_route_table.private.id
+  route_table_id = aws_route_table.private_app02.id
 }
 # resource "aws_route_table_association" "private-ap-northeast-1c" {
 #   subnet_id      = aws_subnet.private-ap-northeast-1c.id
@@ -110,7 +115,7 @@ resource "aws_route_table_association" "private-sa-east-1b" {
 
 resource "aws_route_table_association" "private-sa-east-1c" {
   subnet_id      = aws_subnet.private-sa-east-1c.id
-  route_table_id = aws_route_table.private.id
+  route_table_id = aws_route_table.private_app03.id
 }
 
 #public
@@ -120,10 +125,6 @@ resource "aws_route_table_association" "private-sa-east-1c" {
 #   route_table_id = aws_route_table.public.id
 # }
 
-resource "aws_route_table_association" "public-sa-east-1a" {
-  subnet_id      = aws_subnet.public-sa-east-1a.id
-  route_table_id = aws_route_table.public.id
-}
 
 # resource "aws_route_table_association" "public-ap-northeast-1d" {
 #   subnet_id      = aws_subnet.public-ap-northeast-1d.id
