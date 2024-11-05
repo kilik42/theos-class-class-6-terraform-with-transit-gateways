@@ -13,14 +13,14 @@ resource "aws_route_table" "private_app02" {
       ipv6_cidr_block            = ""
       local_gateway_id           = ""
       network_interface_id       = ""
-      transit_gateway_id         = ""
+      transit_gateway_id         = aws_ec2_transit_gateway.transitGW.id
       vpc_endpoint_id            = ""
       vpc_peering_connection_id  = ""
     },
   ]
 
   tags = {
-    Name = "private"
+    Name = "private for vpc app 02"
   }
 }
 
@@ -40,14 +40,14 @@ resource "aws_route_table" "private_app03" {
       ipv6_cidr_block            = ""
       local_gateway_id           = ""
       network_interface_id       = ""
-      transit_gateway_id         = ""
+      transit_gateway_id         = aws_ec2_transit_gateway.transitGW.id
       vpc_endpoint_id            = ""
       vpc_peering_connection_id  = ""
     },
   ]
 
   tags = {
-    Name = "private"
+    Name = "private for vpc app 03"
   }
 }
 
@@ -79,7 +79,7 @@ resource "aws_route_table" "public" {
   ]
 
   tags = {
-    Name = "public"
+    Name = "public for vpc app01 "
   }
 }
 
@@ -104,8 +104,8 @@ resource "aws_route_table_association" "public-sa-east-1a" {
 #   route_table_id = aws_route_table.private.id
 # }
 
-resource "aws_route_table_association" "private-sa-east-1b" {
-  subnet_id      = aws_subnet.private-sa-east-1b.id
+resource "aws_route_table_association" "private02_route-sa-east-1c" {
+  subnet_id      = aws_subnet.private02-sa-east-1c.id
   route_table_id = aws_route_table.private_app02.id
 }
 # resource "aws_route_table_association" "private-ap-northeast-1c" {
@@ -113,11 +113,23 @@ resource "aws_route_table_association" "private-sa-east-1b" {
 #   route_table_id = aws_route_table.private.id
 # }
 
-resource "aws_route_table_association" "private-sa-east-1c" {
-  subnet_id      = aws_subnet.private-sa-east-1c.id
+resource "aws_route_table_association" "private03-route-sa-east-1c" {
+  subnet_id      = aws_subnet.private03-sa-east-1c.id
   route_table_id = aws_route_table.private_app03.id
 }
 
+
+resource "aws_route" "private_app02_transit" {
+  route_table_id       = aws_route_table.private_app02.id
+  transit_gateway_id   = aws_ec2_transit_gateway.transitGW.id
+  destination_cidr_block = "10.0.0.0/8" # Adjust as per your inter-VPC routing needs
+}
+
+resource "aws_route" "private_app03_transit" {
+  route_table_id       = aws_route_table.private_app03.id
+  transit_gateway_id   = aws_ec2_transit_gateway.transitGW.id
+  destination_cidr_block = "10.0.0.0/8" # Adjust as per your inter-VPC routing needs
+}
 #public
 
 # resource "aws_route_table_association" "public-ap-northeast-1a" {

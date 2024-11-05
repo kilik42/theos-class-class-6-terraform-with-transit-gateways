@@ -18,10 +18,10 @@ resource "aws_subnet" "public-sa-east-1a" {
 }
 #Private subnet for app01
 
-resource "aws_subnet" "private-sa-east-1a" {
+resource "aws_subnet" "private-sa-east-1b" {
   vpc_id                  = aws_vpc.app01.id
   cidr_block              = "10.100.11.0/24"
-  availability_zone       = "sa-east-1a"
+  availability_zone       = "sa-east-1b"
   map_public_ip_on_launch = true
 
   tags = {
@@ -38,14 +38,14 @@ resource "aws_subnet" "private-sa-east-1a" {
 ######## private
 #these are for private
 # need one private subnet for this vpc
-resource "aws_subnet" "private-sa-east-1b" {
+resource "aws_subnet" "private02-sa-east-1c" {
   vpc_id            = aws_vpc.app02.id
-  cidr_block        = "10.101.12.0/24"
-  availability_zone = "sa-east-1b"
+  cidr_block        = "10.101.13.0/24"
+  availability_zone = "sa-east-1c"
 
   tags = {
-    Name    = "private-sa-east-1b"
-    Service = "application01"
+    Name    = "private-sa-east-1c"
+    Service = "application02"
     Owner   = "marvin"
     Planet  = "Area101_private"
   }
@@ -54,14 +54,14 @@ resource "aws_subnet" "private-sa-east-1b" {
 
 ##########################app03##############################
 # need one private subnet for this vpc
-resource "aws_subnet" "private-sa-east-1c" {
+resource "aws_subnet" "private03-sa-east-1c" {
   vpc_id            = aws_vpc.app03.id
-  cidr_block        = "10.102.13.0/24"
+  cidr_block        = "10.102.14.0/24"
   availability_zone = "sa-east-1c"
 
   tags = {
     Name    = "private-sa-east-1c"
-    Service = "application01"
+    Service = "application03"
     Owner   = "Luke"
     Planet  = "Area102_private"
   }
